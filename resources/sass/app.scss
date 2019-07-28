@@ -1,0 +1,38 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito|Roboto:100,300,400,500,700,900');
+@import '~material-design-icons-iconfont/src/material-design-icons';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~vuetify/dist/vuetify.min.css';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.img-table {
+  max-height: 80px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+td.text-xs-left {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.artist-img {
+  height: 80px;
+  display: inline-block;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.artist-header {
+  background-color: rgba(0,0,0, 0.3);
+}
