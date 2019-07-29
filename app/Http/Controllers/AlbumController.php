@@ -51,7 +51,7 @@ class AlbumController extends Controller
 
 
         try {
-            $album->image = $album->uploadImage( $request->image, 'webp' );
+            $album->image = Album::uploadImage( $request->image, 'webp' );
             $album->title = $request->title;
             $album->year = $this->getYear( $request );
             $album->save();
@@ -96,7 +96,7 @@ class AlbumController extends Controller
 
 
         try {
-            if ( $request->image !== null ) $album->image = $album->updateImage( $request->image, $album->image, 'webp' );
+            if ( $request->image !== null ) $album->image = Album::updateImage( $request->image, $album->image, 'webp' );
             $album->title = $request->title;
             $album->year = $this->getYear( $request );
             $album->save();

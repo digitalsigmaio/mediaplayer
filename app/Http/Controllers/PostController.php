@@ -54,7 +54,7 @@ class PostController extends Controller
 
 
         try {
-            $post->image = $post->uploadImage( $request->image, 'webp' );
+            $post->image = Post::uploadImage( $request->image, 'webp' );
             $post->title = $request->title;
             $post->body = $request->body;
             $post->save();
@@ -102,7 +102,7 @@ class PostController extends Controller
 
 
         try {
-            if ( $request->image !== null ) $post->image = $post->updateImage( $request->image, $post->image, 'webp' );
+            if ( $request->image !== null ) $post->image = Post::updateImage( $request->image, $post->image, 'webp' );
             $post->title = $request->title;
             $post->body = $request->body;
             $post->save();

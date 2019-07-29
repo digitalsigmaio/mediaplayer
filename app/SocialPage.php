@@ -3,12 +3,13 @@
 namespace App;
 
 use App\Traits\RecordActivity;
+use Digitalsigma\Imageable\Traits\Imageable;
 use Digitalsigma\ImageUploader\Traits\ImageUploader;
 use Illuminate\Database\Eloquent\Model;
 
 class SocialPage extends Model
 {
-    use ImageUploader, RecordActivity;
+    use Imageable, RecordActivity;
 
     public $timestamps = false;
 
@@ -16,6 +17,6 @@ class SocialPage extends Model
 
     public function getImgAttribute()
     {
-        return $this->getImageUrl($this->icon);
+        return self::getImageUrl($this->icon);
     }
 }

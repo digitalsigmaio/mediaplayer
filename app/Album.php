@@ -3,13 +3,13 @@
 namespace App;
 
 use App\Traits\RecordActivity;
-use Digitalsigma\ImageUploader\Traits\ImageUploader;
+use Digitalsigma\Imageable\Traits\Imageable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Album extends Model
 {
-    use ImageUploader, SoftDeletes, RecordActivity;
+    use Imageable, SoftDeletes, RecordActivity;
 
     protected $fillable = ['title', 'year', 'image'];
 
@@ -20,7 +20,7 @@ class Album extends Model
      */
     public function getImgAttribute()
     {
-        return $this->getImageUrl($this->image);
+        return self::getImageUrl($this->image);
     }
 
     public function tracks()

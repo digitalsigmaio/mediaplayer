@@ -52,7 +52,7 @@ class SocialPageController extends Controller
                            ]);
 
         try {
-            $socialPage->icon = $socialPage->uploadImage( $request->image, 'webp' );
+            $socialPage->icon = SocialPage::uploadImage( $request->image, 'webp' );
             $socialPage->link = $request->link;
             $socialPage->provider = $request->provider;
             $socialPage->save();
@@ -96,7 +96,7 @@ class SocialPageController extends Controller
                            ]);
 
         try {
-            if ( $request->image !== null ) $socialPage->icon = $socialPage->updateImage( $request->image, $socialPage->icon, 'webp' );
+            if ( $request->image !== null ) $socialPage->icon = SocialPage::updateImage( $request->image, $socialPage->icon, 'webp' );
             $socialPage->provider = $request->provider;
             $socialPage->link = $request->link;
             $socialPage->save();

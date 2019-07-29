@@ -52,7 +52,7 @@ class GalleryImageController extends Controller
                             ] );
 
         try {
-            $galleryImage->url = $galleryImage->uploadImage( $request->image, 'webp' );
+            $galleryImage->url = GalleryImage::uploadImage( $request->image, 'webp' );
             $galleryImage->caption = $request->caption;
             $galleryImage->save();
 
@@ -93,7 +93,7 @@ class GalleryImageController extends Controller
                             ] );
 
         try {
-            if ( $request->image !== null ) $galleryImage->url = $galleryImage->updateImage( $request->image, $galleryImage->url, 'webp' );
+            if ( $request->image !== null ) $galleryImage->url = GalleryImage::updateImage( $request->image, $galleryImage->url, 'webp' );
 
             $galleryImage->caption = $request->caption;
             $galleryImage->save();

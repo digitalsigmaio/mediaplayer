@@ -78,7 +78,7 @@ class ArtistController extends Controller
         $artist->about = $request->about;
 
         if ($request->hasFile('image')) {
-            $artist->image = $artist->updateImage($request->image, $artist->image);
+            $artist->image = Artist::updateImage($request->image, $artist->image);
         }
         $artist->save();
         return response()->json($artist);

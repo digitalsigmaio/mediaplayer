@@ -2,12 +2,12 @@
 
 namespace App;
 
-use Digitalsigma\ImageUploader\Traits\ImageUploader;
+use Digitalsigma\Imageable\Traits\Imageable;
 use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
-    use ImageUploader;
+    use Imageable;
 
     protected $table = 'artist';
 
@@ -22,6 +22,6 @@ class Artist extends Model
      */
     public function getImgAttribute()
     {
-        return $this->getImageUrl($this->image);
+        return self::getImageUrl($this->image);
     }
 }
